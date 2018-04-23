@@ -1,0 +1,90 @@
+body {
+    position: relative;
+    font-family: sans-serif;
+    background: white;
+    color: #264348;
+}
+.header{
+    position: relative;
+    /*background-image: url('../img/todolist.jpg');*/
+    background-color: #BFBFBF;
+    border: 1px solid gray;
+    box-shadow: 2px 2px #757D75;
+    height: 50px;
+    padding: 15px;
+}
+h1{
+    position: relative;
+    text-align: center;
+    margin: 0px auto;
+    color:white;
+    font-size: 30px;
+    font-family: 'arial'
+}
+#content{
+    background: #D2D7D3;
+    position: relative;
+}
+.list-bg {
+    position: relative;
+  background-image: url('../img/bumaga.png');
+  background-size: cover;
+  border: 1px solid gray;
+  box-shadow: 3px 3px 3px gray;
+  border-radius: 30px;
+  height: 300px;  
+  margin: 0px;
+ 
+}
+.list-bg ul {
+    
+}
+.container {
+    display: flex;
+    height: 300px;
+    background: grey;
+}
+
+.App {
+    position: relative;
+    width: 100%;
+    margin: 0px auto;
+    width: 300px;
+    padding: 20px;
+}
+ 
+#inp{
+    margin: 10px 10px 10px 0;
+    width: 70%;
+    text-align: center;
+}
+#inp, .btn{
+    height: 30px;
+    border-radius: 10px;
+    
+}
+.btn:hover{
+    transform:scale(1.2);
+    
+}
+.btn-delete{
+    width: 80%;
+    margin: 0px auto;
+}
+.del{
+    position: absolute;
+    right: 10px;
+}
+.checkbox{
+    position: absolute;
+    right: 50px;
+    transform:scale(1.4);
+    opacity:0.9;
+    cursor:pointer;
+}
+li {
+    margin:7px 0;
+}
+.checked {
+        text-decoration: line-through;
+           }
