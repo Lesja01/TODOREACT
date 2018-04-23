@@ -1,4 +1,4 @@
- import "babel-polyfill"; 
+import "babel-polyfill"; 
 
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from "react-dom";  
@@ -10,19 +10,16 @@ import List from './List';
                             this.state = {message: '',
                                         items: []};
                             this.handleChange = this.handleChange.bind(this);
-                            this.handleSubmit = this.handleSubmit.bind(this);
-                            
-                      }
-            
+                            this.handleSubmit = this.handleSubmit.bind(this);                            
+                      }            
 
-            handleChange(e) {
-                
+            handleChange(e) {                
                 this.setState({message: e.target.value});
             }
            
             handleSubmit(e) {
-               e.preventDefault();
-                             
+
+               e.preventDefault();                             
                if (this.state.message.length==0) {
                 alert ("Введите значение");  
                  return;
@@ -30,13 +27,13 @@ import List from './List';
                this.setState({message: "",
                              items: [...this.state.items, {value: this.state.message,
                                                           checked: false}
-                                                          ]});
-              
+                                                          ]});              
             }
+
             RemAllVal() {
                         let ul = document.getElementById('list');
                         let fc = ul.firstChild;
-                       while(fc){
+                        while(fc){
                         ul.removeChild(ul.firstChild);
                         fc=ul.firstChild;
                        }
@@ -44,20 +41,16 @@ import List from './List';
 
             render() {
                 return (
-                    <div className="App">
-                                              
+                    <div className="App">                                              
                        <List items={this.state.items} />
                         <form className="in">
                            <input id="inp" type="text" value={this.state.message}  onChange={this.handleChange} placeholder="введите задание"/>
                            <button className="btn btn-add" onClick={this.handleSubmit}>Добавить</button>
                            <button className="btn btn-delete fa fa-times" onClick={this.RemAllVal}>Удалить все</button>
-                        </form>                  
-                                                                  
+                        </form>            
                     </div>
                 );
             }
-
-
         };
        
 

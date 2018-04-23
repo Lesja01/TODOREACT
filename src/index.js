@@ -1,5 +1,5 @@
 import "babel-polyfill"; 
-import '../css/style.css';
+import '../src/css/style.css';
 import 'font-awesome/css/font-awesome.css';
 
 import React, { Component, PropTypes } from 'react';

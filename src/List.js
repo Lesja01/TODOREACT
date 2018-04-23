@@ -15,8 +15,7 @@ import ToDo from './ToDo' ;
 					}
 
 
-	handleItemClick (index){
-		
+	handleItemClick (index){		
 		this.setState({items: this.props.items[index]});			
 		this.props.items[index].checked= !this.props.items[index].checked;		 
 	    return false;
