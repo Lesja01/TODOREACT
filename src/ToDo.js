@@ -1,14 +1,17 @@
 import "babel-polyfill"; 
 
 import React, { Component, PropTypes } from 'react';
-import ReactDOM from "react-dom";  
-import List from './List';  
+import ReactDOM from "react-dom"; 
+import Header from './Header';   
+import List from './List';
+
+
 
     class ToDo  extends React.Component {
             constructor(props) {
                             super(props);
                             this.state = {message: '',
-                                        items: []};
+                                        items: JSON.parse(localStorage.getItem('todo-app')) || []};
                             this.handleChange = this.handleChange.bind(this);
                             this.handleSubmit = this.handleSubmit.bind(this);                            
                       }            
@@ -27,26 +30,34 @@ import List from './List';
                this.setState({message: "",
                              items: [...this.state.items, {value: this.state.message,
                                                           checked: false}
-                                                          ]});              
+                                                          ]});
+
             }
 
             RemAllVal() {
-                        let ul = document.getElementById('list');
-                        let fc = ul.firstChild;
-                        while(fc){
-                        ul.removeChild(ul.firstChild);
-                        fc=ul.firstChild;
-                       }
+              console.log(this);
+              this.setState(
+                {items:[]});
+              //localStorage.removeItem("todo-app");
+              localStorage.clear();
+                        // let ul = document.getElementById('list');
+                        // let fc = ul.firstChild;
+                        // while(fc){
+                        // ul.removeChild(ul.firstChild);
+                        // fc=ul.firstChild;
+
+                       //}
                     }     
 
             render() {
                 return (
-                    <div className="App">                                              
+                    <div className="App">
+                       <Header items={this.state.items}/>                                              
                        <List items={this.state.items} />
                         <form className="in">
                            <input id="inp" type="text" value={this.state.message}  onChange={this.handleChange} placeholder="введите задание"/>
                            <button className="btn btn-add" onClick={this.handleSubmit}>Добавить</button>
-                           <button className="btn btn-delete fa fa-times" onClick={this.RemAllVal}>Удалить все</button>
+                           <button className="btn btn-delete fa fa-times" onClick={this.RemAllVal.bind(this)}>Удалить все</button>
                         </form>            
                     </div>
                 );
