@@ -9,8 +9,7 @@ import ToDo from './ToDo' ;
 
 	class List  extends React.Component {
 
-	deleteItem(index){
-		 
+	deleteItem(index){		 
 		 this.props.items.splice(index, 1);
 		 this.setState({items: this.props.items});	
 					}
@@ -34,8 +33,7 @@ import ToDo from './ToDo' ;
 
 				render() {
 										
-					const ul = this.props.items.map((item, index) =>{
-																		
+					const ul = this.props.items.map((item, index) =>{																		
 						 return (
 						 	<li key={this.getKey()} className={item.value} >				 
 						 	<div className="item-text">

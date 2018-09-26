@@ -11,9 +11,9 @@ module.exports = {
         overlay: true,
         stats: 'errors-only',
         contentBase: './dist',
-        port: 3000
-        
+        port: 3000        
     },
+
     devtool: 'cheap-module-eval-source-map',
    
   entry: 
@@ -49,39 +49,41 @@ module.exports = {
                  {
                   loader: 'file-loader',
                   options: {            
-                   name: 'assets/images/[name].[ext]',
-                   outputPath: '',
-                   useRelativePath: false            
-                    }
-                   }
-                  ]
-               },
-      // fonts
-      { 
-        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-       loader: "url-loader?limit=10000&mimetype=application/font-woff"
-        },
-             {
-        test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, 
-         use: [{
-           loader: 'file-loader',
-           options: {
-             name: '[name].[ext]',
-             outputPath: 'fonts/',    // where the fonts will go
-             publicPath: '../'       // override the default path
-           }
-         }
+                            name: 'assets/images/[name].[ext]',
+                            outputPath: '',
+                            useRelativePath: false            
+                            }
+                  }
+                ]
+            },
+            // fonts
+            { 
+              test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+              loader: "url-loader?limit=10000&mimetype=application/font-woff"
+            },
+
+            {
+              test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, 
+               use: [
+                 {
+                   loader: 'file-loader',
+                   options: {
+                               name: '[name].[ext]',
+                               outputPath: 'fonts/',    // where the fonts will go
+                               publicPath: '../'       // override the default path
+                             }
+                }
+                ]
+            },
+                // font-awesome
+            {
+              test: /font-awesome\.config\.js/,
+              use: [
+                { loader: 'style-loader' },
+                { loader: 'font-awesome-loader' }
               ]
-     },
-      // font-awesome
-{
-  test: /font-awesome\.config\.js/,
-  use: [
-    { loader: 'style-loader' },
-    { loader: 'font-awesome-loader' }
-  ]
-},
-  ]},
+            },
+            ]},
  
   output: {
     path: DIST_DIR,
@@ -96,6 +98,5 @@ module.exports = {
   plugins: [
   new ExtractTextPlugin('styles.css')
 ]
-
    
 };

@@ -21,7 +21,6 @@ import List from './List';
             }
            
             handleSubmit(e) {
-
                e.preventDefault();                             
                if (this.state.message.length==0) {
                 alert ("Введите значение");  
@@ -31,23 +30,13 @@ import List from './List';
                              items: [...this.state.items, {value: this.state.message,
                                                           checked: false}
                                                           ]});
-
             }
 
             RemAllVal() {
               console.log(this);
-              this.setState(
-                {items:[]});
-              //localStorage.removeItem("todo-app");
+              this.setState({items:[]});
               localStorage.clear();
-                        // let ul = document.getElementById('list');
-                        // let fc = ul.firstChild;
-                        // while(fc){
-                        // ul.removeChild(ul.firstChild);
-                        // fc=ul.firstChild;
-
-                       //}
-                    }     
+            }     
 
             render() {
                 return (
@@ -56,8 +45,8 @@ import List from './List';
                        <List items={this.state.items} />
                         <form className="in">
                            <input id="inp" type="text" value={this.state.message}  onChange={this.handleChange} placeholder="введите задание"/>
-                           <button className="btn btn-add" onClick={this.handleSubmit}>Добавить</button>
-                           <button className="btn btn-delete fa fa-times" onClick={this.RemAllVal.bind(this)}>Удалить все</button>
+                           <button className="btn btn-add" onClick={this.handleSubmit}>добавить</button>
+                           <button className="btn btn-delete fa fa-times" onClick={this.RemAllVal.bind(this)}>УДАЛИТЬ ВСЕ</button>
                         </form>            
                     </div>
                 );
