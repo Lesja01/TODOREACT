@@ -88,7 +88,7 @@ module.exports = {
   output: {
     path: DIST_DIR,
     filename: 'main.js',
-    publicPath: "dist/"
+    publicPath: ""
   },
 
   resolve: {

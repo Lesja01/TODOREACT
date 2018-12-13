@@ -17,7 +17,8 @@ import ToDo from './ToDo' ;
 
 	handleItemClick (index){		
 		this.setState({items: this.props.items[index]});			
-		this.props.items[index].checked= !this.props.items[index].checked;		 
+		this.props.items[index].checked= !this.props.items[index].checked;
+		var pen=document.getElementById('pencil');		 
 	    return false;
 	  }
 
@@ -27,7 +28,7 @@ import ToDo from './ToDo' ;
 
 	checkboxStyle(checked){
 						return{
-							textDecoration: checked? "line-through":"none"
+							textDecoration: checked? "line-through":"none"							
 						}			
 					}
 
@@ -36,12 +37,12 @@ import ToDo from './ToDo' ;
 					const ul = this.props.items.map((item, index) =>{																		
 						 return (
 						 	<li key={this.getKey()} className={item.value} >				 
-						 	<div className="item-text">
-			                  <span style={this.checkboxStyle(item.checked)}>{item.value}</span>	                
-						 		<input type="checkbox" className="checkbox" onChange={this.handleItemClick.bind(this,index)} checked={item.checked}/>
-						 		<label htmlFor="checkbox"></label>
-						 		<button className = 'del fa fa-times' onClick={this.deleteItem.bind(this,index)}></button>
-						 	</div>
+							 	<div className="item-text">
+				                  <span className='item-text-span' style={this.checkboxStyle(item.checked)}>{item.value}</span>	                
+							 		<input type="checkbox" className="checkbox" onChange={this.handleItemClick.bind(this,index)} checked={item.checked}/>
+							 		<label htmlFor="checkbox"></label>
+							 		<button className = 'del fa fa-times' onClick={this.deleteItem.bind(this,index)}></button>
+							 	</div>
 							</li>
 							);
 						 });

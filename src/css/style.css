@@ -1,4 +1,4 @@
-
+/* шрифты */
 @font-face {
   font-family: 'albion';
   src: url('./font/a-albion/a-albionictitulinfl-bold.eot');
@@ -10,7 +10,7 @@
 body {
     position: relative;
     font-family: sans-serif;
-    background-image: url('../img/bg2.jpg');
+    background-image: url('./img/bg2.jpg');
 }
 .container {
     display: flex;
@@ -50,10 +50,10 @@ h1{
     transition: all 1s;
   }
 
-
+/* тело */
 .list-bg {
   position: relative;
-  background-image: url('../img/bumaga.png');
+  background-image: url('./img/bumaga.png');
   background-size: cover;
   border: 1px solid #A17917;
   box-shadow: 3px 10px 10px #250D03;
@@ -61,7 +61,22 @@ h1{
   height: 300px;  
   margin: 0px; 
 }
- 
+.item-text{
+  position: relative;
+  font-family: 'albion', arial;
+  color: #A17917;
+
+  
+}
+.item-text-span{
+  width:70%;
+  margin-right: 30%;
+  display: block;
+  word-wrap: break-word;
+}
+
+
+/*  кнопки */
 #inp{
     margin: 10px 10px 10px 0;
     height: 30px;
@@ -117,19 +132,15 @@ h1{
     width: 80%;
     margin: 0px auto;
 }
-.item-text{
-  position: relative;
-  font-family: 'albion', arial;
-  color: #A17917;
-}
+
 .del, .button-save{
     position: absolute;
     right: 10px;
     width: 10%;
 }
 .del {
-    height: 120%;
-    width: 9%;
+    height: 25px;
+    width: 10%;
     top: -5%;
 }
 .checkbox{
@@ -148,3 +159,26 @@ li {
 .checked {
         text-decoration: line-through;
            }
+/* карандаш */
+#pencil{
+  position:fixed;
+  width:100%;
+  height: auto !important;
+  height: 100%;
+  top: 42%;
+  left: 75%;
+  display: inline-block;
+
+}
+.pencil{
+  position:relative;  
+  overflow: hidden; 
+}
+
+/* @keyframes move {
+  from {}
+   50% {
+    left: -100px;
+    bottom: 20em;
+    } 
+} */

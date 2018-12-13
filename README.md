@@ -6,5 +6,6 @@ Simple ToDo List
 -удаление отдельной позиции
 -сохранение списка в localStogage
 -удаление всех позиций 
+-анимированный карандаш
 
 ![Иллюстрация к проекту](https://github.com/Lesja01/TODOREACT/blob/master/todoImg.png)
